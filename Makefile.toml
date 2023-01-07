@@ -1,0 +1,9 @@
+[config]
+skip_core_tasks = true
+
+[tasks.dev]
+command = "cargo"
+env_files = [".env"]
+args = ["run", "--bin", "server"]
+watch = { watch = ["server"] }
+workspace = false
