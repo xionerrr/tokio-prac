@@ -1,8 +1,22 @@
 pub struct Controllers(pub i32, pub i32);
 
 impl Controllers {
-    pub fn add(self) -> i32 {
-        let a = self.0 + self.1;
-        a
+    pub fn test(name: String) -> FullName {
+        {
+            let surname = "Test 2".to_string();
+            FullName::new(name, surname)
+        }
+    }
+}
+
+#[derive(Debug)]
+pub struct FullName {
+    pub name: String,
+    pub surname: String,
+}
+
+impl FullName {
+    pub fn new(name: String, surname: String) -> Self {
+        Self { name, surname }
     }
 }
